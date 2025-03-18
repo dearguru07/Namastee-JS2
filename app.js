@@ -47,11 +47,11 @@
 // })
 
 const p1 = new Promise((resolve, reject) => {
-  setTimeout(() => reject("P1 success"), 2000);
+  setTimeout(() => reject("P1 Fail"), 2000);
 });
 
 const p2 = new Promise((resolve, reject) => {
-  setTimeout(() => reject("P2 sucess"), 1000);
+  setTimeout(() => reject("P2 Fail"), 1000);
 //   setTimeout(() => resolve("P2 success"), 1000);
 });
 
@@ -87,4 +87,5 @@ Promise.any([p1,p2,p3]).then((res)=>{
 })
 .catch((err)=>{
     console.error(err)
+    console.error(err.errors)
 })
